@@ -67,3 +67,9 @@ Status: **OPEN** = no independent matched compute check found yet; **SUPPORTED**
 | id | claim | source | claimed ratio | scale in source | independent evidence | status | small scale test |
 |---|---|---|---|---|---|---|---|
 | C26 | Batch size warmup reaches the same loss with 43% fewer gradient steps. | [Merrill et al., Critical Batch Size Revisited](https://arxiv.org/abs/2505.23971) (2025) | steps, not compute | OLMo 1B and 7B | Steps saved are not compute saved; a good case for careful accounting. | SUPPORTED | partly |
+
+## Search
+
+| id | claim | source | claimed ratio | scale in source | independent evidence | status | small scale test |
+|---|---|---|---|---|---|---|---|
+| C27 | Successive halving and Hyperband, which give more training budget to promising hyperparameter settings, find good settings an order of magnitude faster than baseline methods such as random search. | [Jamieson and Talwalkar, Non-stochastic Best Arm Identification and Hyperparameter Optimization (arXiv 1502.07943); Li et al., Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization (JMLR 2018)](https://arxiv.org/abs/1603.06560) (2018) | about 0.1 (search compute) | see paper | Widely built into tuning libraries (for example ASHA in Ray Tune, successive halving pruners in Optuna). ECC-003 (AlphaCoderJay): pre-registration in review, CPU harness. | OPEN | yes |
