@@ -47,6 +47,7 @@ Anyone, from any background in AI: researchers, engineers, students and independ
 |---|---|---|---|
 | [ECC-001](results/ECC-001-dotrixai/) | C12 nGPT: claimed 4x to 20x fewer steps | DotrixAI | **PARTIAL**: 1.47x at 0.73M parameters, and the gain fades during training |
 | [ECC-002](results/ECC-002-shikhar/) | C13 dynamic short convolutions | Shikhar | **EXPLORATORY**: 1.8x in FLOPs, no time saving, weak baseline |
+| [ECC-003](results/ECC-003-AlphaCoderJay/) | C27 successive halving: claimed about an order of magnitude faster search than random search | AlphaCoderJay | **PRE-REGISTERED**: frozen 2026-10-27, runs not started |
 
 ## The harness
 
