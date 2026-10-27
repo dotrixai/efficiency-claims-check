@@ -1,7 +1,7 @@
 # Pre-registration: C12 nGPT on GPU at 25M and 89M parameters, context 1k and 4k, a small-scale screen (ECC-004)
 
-**DRAFT, not frozen.** Frozen at: (the commit time of this file on main, once review is done)
-Author: DotrixAI (code and runs by a DotrixAI agent session, owner Noven). Reviewer: to be named.
+**DRAFT, not frozen. PAUSED on 2026-10-27:** DotrixAI is focusing on internal research. The plan is final after review and will be frozen and run when resources allow. Frozen at: (the commit time of this file on main, once review is done)
+Author: DotrixAI (code and runs by a DotrixAI agent session, owner Noven). Reviewers: Jordan Ifejiofor (DotrixAI member, 2026-10-26; not independent); an outside reviewer is still welcome.
 
 **Scale, up front:** this is a proof of concept, a small-scale screen at about 25M parameters, with one point at 89M to show the trend. It is not a verdict on nGPT at the paper's 0.5B to 1B. Every verdict below carries that label.
 
