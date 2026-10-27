@@ -1,0 +1,945 @@
+{
+ "utc": "2026-10-20T14:28:12Z",
+ "env": {
+  "python": "3.13.15",
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+  "code_sha256": "660b7f11d86028a75aa78b3737dcfb462d435b421f054b86a354ad4e72084a80",
+  "kaggle": "Batch",
+  "gpu": "Tesla T4",
+  "capability": [
+   7,
+   5
+  ],
+  "cudnn": 91900,
+  "visible": null,
+  "nvidia_smi": "0, Tesla T4, 580.178.04, 15360 MiB\n1, Tesla T4, 580.178.04, 15360 MiB"
+ },
+ "gpus": 2,
+ "code_sha256": "660b7f11d86028a75aa78b3737dcfb462d435b421f054b86a354ad4e72084a80",
+ "parts": [
+  "checks",
+  "throughput",
+  "stability",
+  "parallel"
+ ],
+ "checks": [
+  {
+   "arm": "baseline",
+   "ctx": 1024,
+   "params": 25178880,
+   "flops_analytic": 169869312,
+   "flops_counter": 176160768.0,
+   "causal_fp32": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 1.5528290271759033,
+    "T": 1024,
+    "amp": false
+   },
+   "causal_amp": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 1.55322265625,
+    "T": 1024,
+    "amp": true
+   },
+   "counter_over_analytic": 1.037037037037037
+  },
+  {
+   "arm": "baseline",
+   "ctx": 4096,
+   "params": 25178880,
+   "flops_analytic": 283115520,
+   "flops_counter": 308281344.0,
+   "causal_fp32": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 1.8485162258148193,
+    "T": 4096,
+    "amp": false
+   },
+   "causal_amp": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 1.847900390625,
+    "T": 4096,
+    "amp": true
+   },
+   "counter_over_analytic": 1.0888888888888888
+  },
+  {
+   "arm": "ngpt",
+   "ctx": 1024,
+   "params": 25207808,
+   "flops_analytic": 169869312,
+   "flops_counter": 176160768.0,
+   "causal_fp32": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.28170597553253174,
+    "T": 1024,
+    "amp": false
+   },
+   "causal_amp": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.2817383110523224,
+    "T": 1024,
+    "amp": true
+   },
+   "counter_over_analytic": 1.037037037037037
+  },
+  {
+   "arm": "ngpt",
+   "ctx": 4096,
+   "params": 25207808,
+   "flops_analytic": 283115520,
+   "flops_counter": 308281344.0,
+   "causal_fp32": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.2613988518714905,
+    "T": 4096,
+    "amp": false
+   },
+   "causal_amp": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.2613525688648224,
+    "T": 4096,
+    "amp": true
+   },
+   "counter_over_analytic": 1.0888888888888888
+  }
+ ],
+ "throughput": [
+  {
+   "arm": "baseline",
+   "ctx": 1024,
+   "micro_rows": 32,
+   "tokens_per_update": 131072,
+   "status": "done",
+   "per_update": {
+    "n": 19,
+    "median_s": 2.206000000000003,
+    "mean_s": 2.2245789473684208,
+    "min_s": 2.163000000000002,
+    "max_s": 2.3320000000000007
+   },
+   "tokens_per_s": 59416.1378059836,
+   "peak_mem_gb": 9.277329921722412,
+   "skipped": 0,
+   "data_sha256": {
+    "train.bin": "7bec0adad02166721cd5d120ef606404ad1abc0de88b63a27f0768acaa14f632",
+    "val.bin": "e9ae679cb3886c25b6b29bfb233e4e9901354b32e931666acb0bbd2fc1bd3368",
+    "token_bytes.npy": "48236aca118c9dd4a550c2255df92e040d593779c0b0f2f43e4d168493328373"
+   }
+  },
+  {
+   "arm": "baseline",
+   "ctx": 1024,
+   "micro_rows": 16,
+   "tokens_per_update": 131072,
+   "status": "done",
+   "per_update": {
+    "n": 19,
+    "median_s": 2.433,
+    "mean_s": 2.4497894736842105,
+    "min_s": 2.3569999999999993,
+    "max_s": 2.530999999999999
+   },
+   "tokens_per_s": 53872.58528565557,
+   "peak_mem_gb": 4.859361171722412,
+   "skipped": 0,
+   "data_sha256": null
+  },
+  {
+   "arm": "baseline",
+   "ctx": 1024,
+   "micro_rows": 8,
+   "tokens_per_update": 131072,
+   "status": "done",
+   "per_update": {
+    "n": 19,
+    "median_s": 2.424999999999997,
+    "mean_s": 2.4176842105263154,
+    "min_s": 2.3790000000000013,
+    "max_s": 2.448999999999998
+   },
+   "tokens_per_s": 54050.30927835058,
+   "peak_mem_gb": 2.650804042816162,
+   "skipped": 0,
+   "data_sha256": null
+  },
+  {
+   "arm": "ngpt",
+   "ctx": 1024,
+   "micro_rows": 32,
+   "tokens_per_update": 131072,
+   "status": "OOM",
+   "error": "CUDA out of memory. Tried to allocate 1024.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 696.81 MiB is free. Including non-PyTorch memory, this process has 13.88 GiB memory in use. Of the a"
+  },
+  {
+   "arm": "ngpt",
+   "ctx": 1024,
+   "micro_rows": 16,
+   "tokens_per_update": 131072,
+   "status": "done",
+   "per_update": {
+    "n": 19,
+    "median_s": 4.798000000000002,
+    "mean_s": 4.798894736842105,
+    "min_s": 4.789999999999999,
+    "max_s": 4.814999999999998
+   },
+   "tokens_per_s": 27318.04918716131,
+   "peak_mem_gb": 9.354111671447754,
+   "skipped": 0,
+   "data_sha256": null
+  },
+  {
+   "arm": "ngpt",
+   "ctx": 1024,
+   "micro_rows": 8,
+   "tokens_per_update": 131072,
+   "status": "done",
+   "per_update": {
+    "n": 19,
+    "median_s": 4.887999999999998,
+    "mean_s": 4.888684210526316,
+    "min_s": 4.88000000000001,
+    "max_s": 4.899999999999999
+   },
+   "tokens_per_s": 26815.0572831424,
+   "peak_mem_gb": 4.902695655822754,
+   "skipped": 0,
+   "data_sha256": null
+  },
+  {
+   "arm": "baseline",
+   "ctx": 4096,
+   "micro_rows": 8,
+   "tokens_per_update": 131072,
+   "status": "done",
+   "per_update": {
+    "n": 19,
+    "median_s": 3.3139999999999965,
+    "mean_s": 3.312526315789473,
+    "min_s": 3.2890000000000015,
+    "max_s": 3.3299999999999983
+   },
+   "tokens_per_s": 39550.995775497926,
+   "peak_mem_gb": 9.277085781097412,
+   "skipped": 0,
+   "data_sha256": null
+  },
+  {
+   "arm": "baseline",
+   "ctx": 4096,
+   "micro_rows": 4,
+   "tokens_per_update": 131072,
+   "status": "done",
+   "per_update": {
+    "n": 19,
+    "median_s": 3.286999999999999,
+    "mean_s": 3.286684210526316,
+    "min_s": 3.257999999999999,
+    "max_s": 3.3020000000000067
+   },
+   "tokens_per_s": 39875.874657742635,
+   "peak_mem_gb": 4.860826015472412,
+   "skipped": 0,
+   "data_sha256": null
+  },
+  {
+   "arm": "baseline",
+   "ctx": 4096,
+   "micro_rows": 2,
+   "tokens_per_update": 131072,
+   "status": "done",
+   "per_update": {
+    "n": 19,
+    "median_s": 3.325000000000003,
+    "mean_s": 3.3248947368421056,
+    "min_s": 3.3069999999999986,
+    "max_s": 3.335000000000008
+   },
+   "tokens_per_s": 39420.15037593982,
+   "peak_mem_gb": 2.653611660003662,
+   "skipped": 0,
+   "data_sha256": null
+  },
+  {
+   "arm": "ngpt",
+   "ctx": 4096,
+   "micro_rows": 8,
+   "tokens_per_update": 131072,
+   "status": "OOM",
+   "error": "CUDA out of memory. Tried to allocate 1024.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 624.81 MiB is free. Including non-PyTorch memory, this process has 13.95 GiB memory in use. Of the a"
+  },
+  {
+   "arm": "ngpt",
+   "ctx": 4096,
+   "micro_rows": 4,
+   "tokens_per_update": 131072,
+   "status": "done",
+   "per_update": {
+    "n": 19,
+    "median_s": 5.783999999999992,
+    "mean_s": 5.782368421052631,
+    "min_s": 5.767000000000003,
+    "max_s": 5.790000000000006
+   },
+   "tokens_per_s": 22661.134163208884,
+   "peak_mem_gb": 9.354111671447754,
+   "skipped": 0,
+   "data_sha256": null
+  },
+  {
+   "arm": "ngpt",
+   "ctx": 4096,
+   "micro_rows": 2,
+   "tokens_per_update": 131072,
+   "status": "done",
+   "per_update": {
+    "n": 19,
+    "median_s": 5.884,
+    "mean_s": 5.8845789473684205,
+    "min_s": 5.8770000000000095,
+    "max_s": 5.890999999999998
+   },
+   "tokens_per_s": 22276.00271923861,
+   "peak_mem_gb": 4.902695655822754,
+   "skipped": 0,
+   "data_sha256": null
+  }
+ ],
+ "stability": [
+  {
+   "arm": "baseline",
+   "lr": 0.002,
+   "ctx": 1024,
+   "micro_rows": 32,
+   "updates": 200,
+   "status": "done",
+   "skipped": 0,
+   "nonfinite": 0,
+   "curve": [
+    [
+     10,
+     7.89284,
+     1.1453,
+     65536.0
+    ],
+    [
+     20,
+     7.31359,
+     0.3124,
+     65536.0
+    ],
+    [
+     30,
+     7.21455,
+     0.2481,
+     65536.0
+    ],
+    [
+     40,
+     7.12247,
+     0.5471,
+     65536.0
+    ],
+    [
+     50,
+     7.00871,
+     0.1886,
+     65536.0
+    ],
+    [
+     60,
+     6.9205,
+     0.2161,
+     65536.0
+    ],
+    [
+     70,
+     6.79837,
+     0.2272,
+     65536.0
+    ],
+    [
+     80,
+     6.65394,
+     0.2771,
+     65536.0
+    ],
+    [
+     90,
+     6.52744,
+     0.2442,
+     65536.0
+    ],
+    [
+     100,
+     6.42619,
+     0.2736,
+     65536.0
+    ],
+    [
+     110,
+     6.36257,
+     0.2441,
+     65536.0
+    ],
+    [
+     120,
+     6.29082,
+     0.2045,
+     65536.0
+    ],
+    [
+     130,
+     6.25382,
+     0.4342,
+     65536.0
+    ],
+    [
+     140,
+     6.21456,
+     0.1547,
+     65536.0
+    ],
+    [
+     150,
+     6.18078,
+     0.1774,
+     65536.0
+    ],
+    [
+     160,
+     6.14219,
+     0.1752,
+     65536.0
+    ],
+    [
+     170,
+     6.10911,
+     0.1371,
+     65536.0
+    ],
+    [
+     180,
+     6.10768,
+     0.1365,
+     65536.0
+    ],
+    [
+     190,
+     6.09409,
+     0.1215,
+     65536.0
+    ],
+    [
+     200,
+     6.1052,
+     0.1188,
+     65536.0
+    ]
+   ],
+   "tune_bits": [
+    [
+     50,
+     10.084242
+    ],
+    [
+     100,
+     9.229544
+    ],
+    [
+     200,
+     8.811845
+    ]
+   ],
+   "train_time_s": 477.9896926589988
+  },
+  {
+   "arm": "baseline",
+   "lr": 0.008,
+   "ctx": 1024,
+   "micro_rows": 32,
+   "updates": 200,
+   "status": "done",
+   "skipped": 0,
+   "nonfinite": 0,
+   "curve": [
+    [
+     10,
+     8.08335,
+     0.6383,
+     65536.0
+    ],
+    [
+     20,
+     7.41976,
+     0.3046,
+     65536.0
+    ],
+    [
+     30,
+     7.31928,
+     0.2075,
+     65536.0
+    ],
+    [
+     40,
+     7.22702,
+     0.1814,
+     65536.0
+    ],
+    [
+     50,
+     7.05241,
+     0.1688,
+     65536.0
+    ],
+    [
+     60,
+     6.95151,
+     0.138,
+     65536.0
+    ],
+    [
+     70,
+     6.85814,
+     0.1054,
+     65536.0
+    ],
+    [
+     80,
+     6.79866,
+     0.1321,
+     65536.0
+    ],
+    [
+     90,
+     6.73647,
+     0.1455,
+     65536.0
+    ],
+    [
+     100,
+     6.65023,
+     0.1294,
+     65536.0
+    ],
+    [
+     110,
+     6.59021,
+     0.0952,
+     65536.0
+    ],
+    [
+     120,
+     6.52882,
+     0.104,
+     65536.0
+    ],
+    [
+     130,
+     6.49771,
+     0.0959,
+     65536.0
+    ],
+    [
+     140,
+     6.46559,
+     0.0868,
+     65536.0
+    ],
+    [
+     150,
+     6.43555,
+     0.0881,
+     65536.0
+    ],
+    [
+     160,
+     6.40061,
+     0.0733,
+     65536.0
+    ],
+    [
+     170,
+     6.3681,
+     0.0787,
+     65536.0
+    ],
+    [
+     180,
+     6.36667,
+     0.0686,
+     65536.0
+    ],
+    [
+     190,
+     6.35306,
+     0.0707,
+     65536.0
+    ],
+    [
+     200,
+     6.36315,
+     0.0739,
+     65536.0
+    ]
+   ],
+   "tune_bits": [
+    [
+     50,
+     10.131643
+    ],
+    [
+     100,
+     9.554394
+    ],
+    [
+     200,
+     9.202398
+    ]
+   ],
+   "train_time_s": 458.58423738300166
+  },
+  {
+   "arm": "ngpt",
+   "lr": 0.016,
+   "ctx": 1024,
+   "micro_rows": 16,
+   "updates": 200,
+   "status": "done",
+   "skipped": 0,
+   "nonfinite": 0,
+   "curve": [
+    [
+     10,
+     8.09186,
+     1.1289,
+     65536.0
+    ],
+    [
+     20,
+     6.60939,
+     0.4368,
+     65536.0
+    ],
+    [
+     30,
+     6.02439,
+     0.2072,
+     65536.0
+    ],
+    [
+     40,
+     5.74571,
+     0.1324,
+     65536.0
+    ],
+    [
+     50,
+     5.55316,
+     0.097,
+     65536.0
+    ],
+    [
+     60,
+     5.44107,
+     0.1841,
+     65536.0
+    ],
+    [
+     70,
+     5.35829,
+     0.1477,
+     65536.0
+    ],
+    [
+     80,
+     5.28346,
+     0.1526,
+     65536.0
+    ],
+    [
+     90,
+     5.19911,
+     0.206,
+     65536.0
+    ],
+    [
+     100,
+     5.11034,
+     0.1336,
+     65536.0
+    ],
+    [
+     110,
+     5.03519,
+     0.1313,
+     65536.0
+    ],
+    [
+     120,
+     4.96606,
+     0.121,
+     65536.0
+    ],
+    [
+     130,
+     4.9156,
+     0.111,
+     65536.0
+    ],
+    [
+     140,
+     4.85823,
+     0.133,
+     65536.0
+    ],
+    [
+     150,
+     4.80757,
+     0.1149,
+     65536.0
+    ],
+    [
+     160,
+     4.76254,
+     0.1061,
+     65536.0
+    ],
+    [
+     170,
+     4.71707,
+     0.0966,
+     65536.0
+    ],
+    [
+     180,
+     4.70746,
+     0.0941,
+     65536.0
+    ],
+    [
+     190,
+     4.68401,
+     0.0926,
+     65536.0
+    ],
+    [
+     200,
+     4.68936,
+     0.0865,
+     65536.0
+    ]
+   ],
+   "tune_bits": [
+    [
+     50,
+     7.934782
+    ],
+    [
+     100,
+     7.350417
+    ],
+    [
+     200,
+     6.799067
+    ]
+   ],
+   "train_time_s": 959.6151095520017
+  },
+  {
+   "arm": "ngpt",
+   "lr": 0.064,
+   "ctx": 1024,
+   "micro_rows": 16,
+   "updates": 200,
+   "status": "done",
+   "skipped": 7,
+   "nonfinite": 0,
+   "curve": [
+    [
+     10,
+     7.68349,
+     0.3529,
+     65536.0
+    ],
+    [
+     20,
+     6.08613,
+     0.3259,
+     65536.0
+    ],
+    [
+     30,
+     5.80428,
+     0.3972,
+     65536.0
+    ],
+    [
+     40,
+     5.74486,
+     0.3258,
+     65536.0
+    ],
+    [
+     50,
+     5.78816,
+     0.3573,
+     65536.0
+    ],
+    [
+     60,
+     5.75079,
+     3.2666,
+     65536.0
+    ],
+    [
+     70,
+     5.91496,
+     14.6194,
+     16384.0
+    ],
+    [
+     80,
+     5.94451,
+     23.6019,
+     4096.0
+    ],
+    [
+     90,
+     6.0707,
+     NaN,
+     1024.0
+    ],
+    [
+     100,
+     6.281,
+     10.4768,
+     1024.0
+    ],
+    [
+     110,
+     6.32442,
+     17.9922,
+     1024.0
+    ],
+    [
+     120,
+     6.07147,
+     79.5359,
+     1024.0
+    ],
+    [
+     130,
+     6.00146,
+     8.8917,
+     512.0
+    ],
+    [
+     140,
+     5.85018,
+     12.3035,
+     512.0
+    ],
+    [
+     150,
+     5.73779,
+     17.6783,
+     512.0
+    ],
+    [
+     160,
+     5.65233,
+     5.1666,
+     512.0
+    ],
+    [
+     170,
+     5.56529,
+     4.4319,
+     512.0
+    ],
+    [
+     180,
+     5.51906,
+     49.2576,
+     512.0
+    ],
+    [
+     190,
+     5.47977,
+     11.4312,
+     512.0
+    ],
+    [
+     200,
+     5.47765,
+     55.963,
+     512.0
+    ]
+   ],
+   "tune_bits": [
+    [
+     50,
+     8.376077
+    ],
+    [
+     100,
+     8.995411
+    ],
+    [
+     200,
+     7.93268
+    ]
+   ],
+   "train_time_s": 952.3860764649985
+  }
+ ],
+ "parallel": [
+  {
+   "arm": "baseline",
+   "micro_rows": 32,
+   "returncode": 1,
+   "per_update": null,
+   "gpu": null,
+   "alone_median_s": 2.206000000000003,
+   "tail": "ess 18 has 13.45 GiB memory in use. Including non-PyTorch memory, this process has 1.10 GiB memory in use. Of the allocated memory 915.46 MiB is allocated by PyTorch, and 68.54 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n"
+  },
+  {
+   "arm": "ngpt",
+   "micro_rows": 16,
+   "returncode": 0,
+   "per_update": {
+    "n": 34,
+    "median_s": 4.828000000000003,
+    "mean_s": 4.813176470588235,
+    "min_s": 4.576999999999998,
+    "max_s": 5.027999999999992
+   },
+   "gpu": "Tesla T4",
+   "alone_median_s": 4.798000000000002,
+   "tail": " bits/token, 3.3508 bits/byte, train time 162 s\n  eval u 36: 12.3583 bits/token, 3.3498 bits/byte, train time 171 s\n  eval u 38: 12.3567 bits/token, 3.3494 bits/byte, train time 181 s\n  eval u 40: 12.3564 bits/token, 3.3493 bits/byte, train time 191 s\n{\"status\": \"done\", \"final\": {\"update\": 40, \"kind\": \"scheduled\", \"tokens\": 5242880, \"flops\": 890604418498560, \"train_time_s\": 190.905, \"bits_per_token\": 12.356407, \"bits_per_byte\": 3.349282, \"eval_targets\": 65536}, \"train_time_s\": 190.905210738003}\n",
+   "slowdown_vs_alone": 1.0062526052521887
+  }
+ ],
+ "seconds": 4128.5
+}

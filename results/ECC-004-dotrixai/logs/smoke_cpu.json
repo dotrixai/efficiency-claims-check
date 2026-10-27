@@ -1,0 +1,572 @@
+{
+ "utc": "2026-10-21T08:44:47Z",
+ "code_sha256": "ce88c293a4524967450222a9011a1b6ec3bcf16711c6f499347921406f864b2c",
+ "torch": "2.7.0+cpu",
+ "runs": [
+  {
+   "arm": "baseline",
+   "amp": "fp32",
+   "status": "done",
+   "params": 197376,
+   "bits": [
+    8.425724,
+    6.508477,
+    5.873601
+   ],
+   "skipped": 0,
+   "nonfinite": 0,
+   "train_time_s": 1.4,
+   "wall_s": 4.4,
+   "causal_init": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.6411239504814148,
+    "T": 64,
+    "amp": false
+   },
+   "causal_trained": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 3.27988338470459,
+    "T": 64,
+    "amp": false
+   },
+   "causal_init_amp": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.6411239504814148,
+    "T": 64,
+    "amp": true
+   },
+   "flops": {
+    "analytic": 1081344,
+    "flop_counter": 983040.0
+   }
+  },
+  {
+   "arm": "baseline",
+   "amp": "fp16",
+   "status": "done",
+   "params": 197376,
+   "bits": [
+    8.425887,
+    6.507589,
+    5.8726
+   ],
+   "skipped": 0,
+   "nonfinite": 0,
+   "train_time_s": 16.99,
+   "wall_s": 17.7,
+   "causal_init": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.6411239504814148,
+    "T": 64,
+    "amp": false
+   },
+   "causal_trained": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 3.3135480880737305,
+    "T": 64,
+    "amp": false
+   },
+   "causal_init_amp": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.64111328125,
+    "T": 64,
+    "amp": true
+   },
+   "flops": {
+    "analytic": 1081344,
+    "flop_counter": 983040.0
+   }
+  },
+  {
+   "arm": "baseline",
+   "amp": "bf16",
+   "status": "done",
+   "params": 197376,
+   "bits": [
+    8.425126,
+    6.509309,
+    5.87465
+   ],
+   "skipped": 0,
+   "nonfinite": 0,
+   "train_time_s": 15.27,
+   "wall_s": 15.9,
+   "causal_init": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.6411239504814148,
+    "T": 64,
+    "amp": false
+   },
+   "causal_trained": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 3.2713422775268555,
+    "T": 64,
+    "amp": false
+   },
+   "causal_init_amp": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.6416015625,
+    "T": 64,
+    "amp": true
+   },
+   "flops": {
+    "analytic": 1081344,
+    "flop_counter": 983040.0
+   }
+  },
+  {
+   "arm": "ngpt",
+   "amp": "fp32",
+   "status": "done",
+   "params": 198528,
+   "bits": [
+    8.916985,
+    8.513134,
+    8.367105
+   ],
+   "skipped": 0,
+   "nonfinite": 0,
+   "train_time_s": 1.86,
+   "wall_s": 2.0,
+   "causal_init": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.49097228050231934,
+    "T": 64,
+    "amp": false
+   },
+   "causal_trained": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.9068347215652466,
+    "T": 64,
+    "amp": false
+   },
+   "causal_init_amp": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.49097228050231934,
+    "T": 64,
+    "amp": true
+   },
+   "flops": {
+    "analytic": 1081344,
+    "flop_counter": 983040.0
+   }
+  },
+  {
+   "arm": "ngpt",
+   "amp": "fp16",
+   "status": "done",
+   "params": 198528,
+   "bits": [
+    8.916981,
+    8.513136,
+    8.367103
+   ],
+   "skipped": 0,
+   "nonfinite": 0,
+   "train_time_s": 17.51,
+   "wall_s": 18.2,
+   "causal_init": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.49097228050231934,
+    "T": 64,
+    "amp": false
+   },
+   "causal_trained": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.906784176826477,
+    "T": 64,
+    "amp": false
+   },
+   "causal_init_amp": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.4910888671875,
+    "T": 64,
+    "amp": true
+   },
+   "flops": {
+    "analytic": 1081344,
+    "flop_counter": 983040.0
+   }
+  },
+  {
+   "arm": "ngpt",
+   "amp": "bf16",
+   "status": "done",
+   "params": 198528,
+   "bits": [
+    8.917,
+    8.513144,
+    8.367078
+   ],
+   "skipped": 0,
+   "nonfinite": 0,
+   "train_time_s": 15.41,
+   "wall_s": 16.1,
+   "causal_init": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.49097228050231934,
+    "T": 64,
+    "amp": false
+   },
+   "causal_trained": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.9052130579948425,
+    "T": 64,
+    "amp": false
+   },
+   "causal_init_amp": {
+    "ok": true,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.4912109375,
+    "T": 64,
+    "amp": true
+   },
+   "flops": {
+    "analytic": 1081344,
+    "flop_counter": 983040.0
+   }
+  }
+ ],
+ "checks": {
+  "baseline/fp32 trains, finite, bits fall": {
+   "ok": true,
+   "detail": {
+    "bits": [
+     8.425724,
+     6.508477,
+     5.873601
+    ],
+    "skipped": 0,
+    "wall_s": 4.4
+   }
+  },
+  "baseline/fp32 causal init+trained": {
+   "ok": true,
+   "detail": {
+    "init": {
+     "ok": true,
+     "max_change_before_t": 0.0,
+     "max_change_other_row": 0.0,
+     "change_from_t": 0.6411239504814148,
+     "T": 64,
+     "amp": false
+    },
+    "trained": {
+     "ok": true,
+     "max_change_before_t": 0.0,
+     "max_change_other_row": 0.0,
+     "change_from_t": 3.27988338470459,
+     "T": 64,
+     "amp": false
+    }
+   }
+  },
+  "baseline/fp16 trains, finite, bits fall": {
+   "ok": true,
+   "detail": {
+    "bits": [
+     8.425887,
+     6.507589,
+     5.8726
+    ],
+    "skipped": 0,
+    "wall_s": 17.7
+   }
+  },
+  "baseline/fp16 causal init+trained": {
+   "ok": true,
+   "detail": {
+    "init": {
+     "ok": true,
+     "max_change_before_t": 0.0,
+     "max_change_other_row": 0.0,
+     "change_from_t": 0.6411239504814148,
+     "T": 64,
+     "amp": false
+    },
+    "trained": {
+     "ok": true,
+     "max_change_before_t": 0.0,
+     "max_change_other_row": 0.0,
+     "change_from_t": 3.3135480880737305,
+     "T": 64,
+     "amp": false
+    }
+   }
+  },
+  "baseline/bf16 trains, finite, bits fall": {
+   "ok": true,
+   "detail": {
+    "bits": [
+     8.425126,
+     6.509309,
+     5.87465
+    ],
+    "skipped": 0,
+    "wall_s": 15.9
+   }
+  },
+  "baseline/bf16 causal init+trained": {
+   "ok": true,
+   "detail": {
+    "init": {
+     "ok": true,
+     "max_change_before_t": 0.0,
+     "max_change_other_row": 0.0,
+     "change_from_t": 0.6411239504814148,
+     "T": 64,
+     "amp": false
+    },
+    "trained": {
+     "ok": true,
+     "max_change_before_t": 0.0,
+     "max_change_other_row": 0.0,
+     "change_from_t": 3.2713422775268555,
+     "T": 64,
+     "amp": false
+    }
+   }
+  },
+  "ngpt/fp32 trains, finite, bits fall": {
+   "ok": true,
+   "detail": {
+    "bits": [
+     8.916985,
+     8.513134,
+     8.367105
+    ],
+    "skipped": 0,
+    "wall_s": 2.0
+   }
+  },
+  "ngpt/fp32 causal init+trained": {
+   "ok": true,
+   "detail": {
+    "init": {
+     "ok": true,
+     "max_change_before_t": 0.0,
+     "max_change_other_row": 0.0,
+     "change_from_t": 0.49097228050231934,
+     "T": 64,
+     "amp": false
+    },
+    "trained": {
+     "ok": true,
+     "max_change_before_t": 0.0,
+     "max_change_other_row": 0.0,
+     "change_from_t": 0.9068347215652466,
+     "T": 64,
+     "amp": false
+    }
+   }
+  },
+  "ngpt/fp16 trains, finite, bits fall": {
+   "ok": true,
+   "detail": {
+    "bits": [
+     8.916981,
+     8.513136,
+     8.367103
+    ],
+    "skipped": 0,
+    "wall_s": 18.2
+   }
+  },
+  "ngpt/fp16 causal init+trained": {
+   "ok": true,
+   "detail": {
+    "init": {
+     "ok": true,
+     "max_change_before_t": 0.0,
+     "max_change_other_row": 0.0,
+     "change_from_t": 0.49097228050231934,
+     "T": 64,
+     "amp": false
+    },
+    "trained": {
+     "ok": true,
+     "max_change_before_t": 0.0,
+     "max_change_other_row": 0.0,
+     "change_from_t": 0.906784176826477,
+     "T": 64,
+     "amp": false
+    }
+   }
+  },
+  "ngpt/bf16 trains, finite, bits fall": {
+   "ok": true,
+   "detail": {
+    "bits": [
+     8.917,
+     8.513144,
+     8.367078
+    ],
+    "skipped": 0,
+    "wall_s": 16.1
+   }
+  },
+  "ngpt/bf16 causal init+trained": {
+   "ok": true,
+   "detail": {
+    "init": {
+     "ok": true,
+     "max_change_before_t": 0.0,
+     "max_change_other_row": 0.0,
+     "change_from_t": 0.49097228050231934,
+     "T": 64,
+     "amp": false
+    },
+    "trained": {
+     "ok": true,
+     "max_change_before_t": 0.0,
+     "max_change_other_row": 0.0,
+     "change_from_t": 0.9052130579948425,
+     "T": 64,
+     "amp": false
+    }
+   }
+  },
+  "baseline compiled path matches eager (fp32)": {
+   "ok": true,
+   "detail": {
+    "max_bits_diff": 1.0000000010279564e-06
+   }
+  },
+  "ngpt compiled path matches eager (fp32)": {
+   "ok": true,
+   "detail": {
+    "max_bits_diff": 0.0
+   }
+  },
+  "baseline resume matches uninterrupted run": {
+   "ok": true,
+   "detail": {
+    "max_bits_diff": 0.0,
+    "segments": 2
+   }
+  },
+  "ngpt resume matches uninterrupted run": {
+   "ok": true,
+   "detail": {
+    "max_bits_diff": 0.0,
+    "segments": 2
+   }
+  },
+  "baseline non-causal model is rejected": {
+   "ok": true,
+   "detail": {
+    "ok": false,
+    "max_change_before_t": 0.03618307411670685,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.6386067271232605,
+    "T": 64,
+    "amp": false
+   }
+  },
+  "ngpt non-causal model is rejected": {
+   "ok": true,
+   "detail": {
+    "ok": false,
+    "max_change_before_t": 0.009650691412389278,
+    "max_change_other_row": 0.0,
+    "change_from_t": 0.5171908736228943,
+    "T": 64,
+    "amp": false
+   }
+  },
+  "baseline batch-coupled model is rejected": {
+   "ok": true,
+   "detail": {
+    "ok": false,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.3220633566379547,
+    "change_from_t": 0.9661900997161865,
+    "T": 64,
+    "amp": false
+   }
+  },
+  "ngpt batch-coupled model is rejected": {
+   "ok": true,
+   "detail": {
+    "ok": false,
+    "max_change_before_t": 0.0,
+    "max_change_other_row": 0.26010799407958984,
+    "change_from_t": 0.7803239822387695,
+    "T": 64,
+    "amp": false
+   }
+  },
+  "sealed and tuning windows disjoint": {
+   "ok": true,
+   "detail": {
+    "sealed": [
+     0,
+     975
+    ],
+    "tune": [
+     38960,
+     39935
+    ],
+    "val": 40000
+   }
+  },
+  "changed token file is refused": {
+   "ok": true,
+   "detail": {}
+  },
+  "budget beyond one epoch is refused": {
+   "ok": true,
+   "detail": {}
+  },
+  "flops": {
+   "baseline": {
+    "params": 25179904,
+    "analytic": 141557760,
+    "flop_counter": 132120576.0,
+    "ratio": 0.9333333333333333
+   },
+   "ngpt": {
+    "params": 25207808,
+    "analytic": 141557760,
+    "flop_counter": 132120576.0,
+    "ratio": 0.9333333333333333
+   }
+  }
+ },
+ "fails": []
+}

@@ -2,3 +2,10 @@ __pycache__/
 *.pyc
 *.bin
 data/
+
+# credentials (never commit)
+.kaggle/
+kaggle.json
+access_token
+*.env
+.env

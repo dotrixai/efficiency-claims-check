@@ -1,0 +1,291 @@
+{
+ "utc": "2026-10-20T23:06:21Z",
+ "env": {
+  "python": "3.13.15",
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+  "code_sha256": "e1ca4a52c8ea03d28dfc34a2ec3873b73c0507ef719b2d125c380d1dafbb47cc",
+  "kaggle": "Batch",
+  "gpu": "Tesla T4",
+  "capability": [
+   7,
+   5
+  ],
+  "cudnn": 91900,
+  "visible": null,
+  "nvidia_smi": "0, Tesla T4, 580.178.04, 15360 MiB\n1, Tesla T4, 580.178.04, 15360 MiB"
+ },
+ "gpus": 2,
+ "code_sha256": "e1ca4a52c8ea03d28dfc34a2ec3873b73c0507ef719b2d125c380d1dafbb47cc",
+ "parts": [
+  "compile",
+  "equiv",
+  "parallel"
+ ],
+ "compile_backend": "inductor",
+ "checks": [],
+ "throughput": [],
+ "stability": [],
+ "compile": [
+  {
+   "arm": "baseline",
+   "ctx": 1024,
+   "micro_rows": 32,
+   "compile": "inductor",
+   "status": "done",
+   "per_update": {
+    "n": 24,
+    "median_s": 1.394999999999996,
+    "mean_s": 1.3994166666666665,
+    "min_s": 1.3739999999999952,
+    "max_s": 1.445999999999998
+   },
+   "tokens_per_s": 93958.42293906836,
+   "first_update_s": 24.239,
+   "peak_mem_gb": 5.50670051574707,
+   "skipped": 0
+  },
+  {
+   "arm": "ngpt",
+   "ctx": 1024,
+   "micro_rows": 16,
+   "compile": "inductor",
+   "status": "done",
+   "per_update": {
+    "n": 24,
+    "median_s": 1.8250000000000028,
+    "mean_s": 1.8308749999999998,
+    "min_s": 1.777000000000001,
+    "max_s": 1.9269999999999925
+   },
+   "tokens_per_s": 71820.27397260263,
+   "first_update_s": 45.317,
+   "peak_mem_gb": 4.279805660247803,
+   "skipped": 0
+  },
+  {
+   "arm": "ngpt",
+   "ctx": 1024,
+   "micro_rows": 32,
+   "compile": "inductor",
+   "status": "done",
+   "per_update": {
+    "n": 24,
+    "median_s": 2.0199999999999996,
+    "mean_s": 2.0012916666666665,
+    "min_s": 1.9500000000000028,
+    "max_s": 2.0249999999999986
+   },
+   "tokens_per_s": 64887.1287128713,
+   "first_update_s": 1.909,
+   "peak_mem_gb": 8.117085933685303,
+   "skipped": 0
+  },
+  {
+   "arm": "baseline",
+   "ctx": 4096,
+   "micro_rows": 8,
+   "compile": "inductor",
+   "status": "done",
+   "per_update": {
+    "n": 24,
+    "median_s": 2.6099999999999994,
+    "mean_s": 2.60575,
+    "min_s": 2.5259999999999962,
+    "max_s": 2.716000000000001
+   },
+   "tokens_per_s": 50219.157088122614,
+   "first_update_s": 26.839,
+   "peak_mem_gb": 5.50718879699707,
+   "skipped": 0
+  },
+  {
+   "arm": "ngpt",
+   "ctx": 4096,
+   "micro_rows": 4,
+   "compile": "inductor",
+   "status": "done",
+   "per_update": {
+    "n": 24,
+    "median_s": 2.9129999999999967,
+    "mean_s": 2.933125,
+    "min_s": 2.8400000000000034,
+    "max_s": 3.0859999999999985
+   },
+   "tokens_per_s": 44995.53724682463,
+   "first_update_s": 42.633,
+   "peak_mem_gb": 4.280782222747803,
+   "skipped": 0
+  },
+  {
+   "arm": "ngpt",
+   "ctx": 4096,
+   "micro_rows": 8,
+   "compile": "inductor",
+   "status": "done",
+   "per_update": {
+    "n": 24,
+    "median_s": 2.89200000000001,
+    "mean_s": 2.895541666666667,
+    "min_s": 2.8740000000000023,
+    "max_s": 2.9209999999999994
+   },
+   "tokens_per_s": 45322.26832641754,
+   "first_update_s": 2.887,
+   "peak_mem_gb": 8.118062496185303,
+   "skipped": 0
+  }
+ ],
+ "equiv": [
+  {
+   "arm": "baseline",
+   "lr": 0.002,
+   "micro_rows": 32,
+   "updates": 60,
+   "runs": {
+    "none": {
+     "status": "done",
+     "mean_last20_loss": 6.741285,
+     "final_tune_bits": 9.693689,
+     "skipped": 0,
+     "per_update": {
+      "n": 54,
+      "median_s": 2.4039999999999964,
+      "mean_s": 2.394925925925926,
+      "min_s": 2.3370000000000015,
+      "max_s": 2.4200000000000017
+     }
+    },
+    "inductor": {
+     "status": "done",
+     "mean_last20_loss": 6.969795,
+     "final_tune_bits": 10.07151,
+     "skipped": 0,
+     "per_update": {
+      "n": 54,
+      "median_s": 1.6509999999999962,
+      "mean_s": 1.6465740740740742,
+      "min_s": 1.6020000000000003,
+      "max_s": 1.677999999999999
+     }
+    }
+   },
+   "diff_mean_last20_loss": 0.22851,
+   "diff_final_tune_bits": 0.37782100000000085,
+   "speedup": 1.4560872198667485
+  },
+  {
+   "arm": "ngpt",
+   "lr": 0.016,
+   "micro_rows": 16,
+   "updates": 60,
+   "runs": {
+    "none": {
+     "status": "done",
+     "mean_last20_loss": 5.7253515,
+     "final_tune_bits": 8.26698,
+     "skipped": 0,
+     "per_update": {
+      "n": 54,
+      "median_s": 4.859000000000009,
+      "mean_s": 4.858574074074074,
+      "min_s": 4.837000000000003,
+      "max_s": 4.871000000000009
+     }
+    },
+    "inductor": {
+     "status": "done",
+     "mean_last20_loss": 5.724299,
+     "final_tune_bits": 8.263431,
+     "skipped": 0,
+     "per_update": {
+      "n": 54,
+      "median_s": 1.9450000000000003,
+      "mean_s": 1.948759259259259,
+      "min_s": 1.9380000000000024,
+      "max_s": 1.9640000000000004
+     }
+    }
+   },
+   "diff_mean_last20_loss": -0.0010525000000001228,
+   "diff_final_tune_bits": -0.0035489999999995803,
+   "speedup": 2.4982005141388215
+  }
+ ],
+ "parallel": [
+  {
+   "gpu": 0,
+   "arm": "baseline",
+   "micro_rows": 32,
+   "compile": "inductor",
+   "returncode": 0,
+   "per_update": {
+    "n": 34,
+    "median_s": 1.6870000000000047,
+    "mean_s": 1.687,
+    "min_s": 1.6099999999999994,
+    "max_s": 1.801000000000002
+   },
+   "alone_median_s": 1.394999999999996,
+   "tail": " train time 55 s\n  eval u 32: 10.2556 bits/token, 2.7798 bits/byte, train time 59 s\n  eval u 34: 10.2478 bits/token, 2.7777 bits/byte, train time 62 s\n  eval u 36: 10.2422 bits/token, 2.7762 bits/byte, train time 65 s\n  eval u 38: 10.2393 bits/token, 2.7754 bits/byte, train time 68 s\n  eval u 40: 10.2387 bits/token, 2.7753 bits/byte, train time 71 s\n{\"status\": \"done\", \"final\": {\"update\": 40, \"kind\": \"scheduled\", \"tokens\": 5242880, \"flops\": 890604418498560, \"train_time_s\": 71.453, \"bits_per_token\": 10.238678, \"bits_per_byte\": 2.775258, \"eval_targets\": 65536}, \"train_time_s\": 71.45316470500165}\n",
+   "slowdown_vs_alone": 1.2093189964157773
+  },
+  {
+   "gpu": 1,
+   "arm": "ngpt",
+   "micro_rows": 16,
+   "compile": "inductor",
+   "returncode": 0,
+   "per_update": {
+    "n": 34,
+    "median_s": 1.7319999999999993,
+    "mean_s": 1.7383529411764707,
+    "min_s": 1.6670000000000016,
+    "max_s": 1.8059999999999974
+   },
+   "alone_median_s": 1.8250000000000028,
+   "tail": "in time 88 s\n  eval u 32: 12.3688 bits/token, 3.3526 bits/byte, train time 91 s\n  eval u 34: 12.3620 bits/token, 3.3508 bits/byte, train time 95 s\n  eval u 36: 12.3583 bits/token, 3.3498 bits/byte, train time 98 s\n  eval u 38: 12.3567 bits/token, 3.3494 bits/byte, train time 102 s\n  eval u 40: 12.3564 bits/token, 3.3493 bits/byte, train time 105 s\n{\"status\": \"done\", \"final\": {\"update\": 40, \"kind\": \"scheduled\", \"tokens\": 5242880, \"flops\": 890604418498560, \"train_time_s\": 105.404, \"bits_per_token\": 12.356406, \"bits_per_byte\": 3.349282, \"eval_targets\": 65536}, \"train_time_s\": 105.40357367599836}\n",
+   "slowdown_vs_alone": 0.9490410958904091
+  },
+  {
+   "gpu": 1,
+   "arm": "baseline",
+   "micro_rows": 32,
+   "compile": "inductor",
+   "returncode": 0,
+   "per_update": {
+    "n": 34,
+    "median_s": 1.5779999999999959,
+    "mean_s": 1.574205882352941,
+    "min_s": 1.5069999999999997,
+    "max_s": 1.6259999999999977
+   },
+   "alone_median_s": 1.394999999999996,
+   "tail": ", train time 51 s\n  eval u 32: 10.1835 bits/token, 2.7603 bits/byte, train time 54 s\n  eval u 34: 10.1739 bits/token, 2.7577 bits/byte, train time 57 s\n  eval u 36: 10.1657 bits/token, 2.7555 bits/byte, train time 60 s\n  eval u 38: 10.1612 bits/token, 2.7543 bits/byte, train time 63 s\n  eval u 40: 10.1603 bits/token, 2.7540 bits/byte, train time 66 s\n{\"status\": \"done\", \"final\": {\"update\": 40, \"kind\": \"scheduled\", \"tokens\": 5242880, \"flops\": 890604418498560, \"train_time_s\": 66.267, \"bits_per_token\": 10.160261, \"bits_per_byte\": 2.754003, \"eval_targets\": 65536}, \"train_time_s\": 66.2668231720013}\n",
+   "slowdown_vs_alone": 1.1311827956989249
+  },
+  {
+   "gpu": 0,
+   "arm": "ngpt",
+   "micro_rows": 16,
+   "compile": "inductor",
+   "returncode": 0,
+   "per_update": {
+    "n": 34,
+    "median_s": 1.983000000000004,
+    "mean_s": 2.0066176470588233,
+    "min_s": 1.9359999999999928,
+    "max_s": 2.1439999999999984
+   },
+   "alone_median_s": 1.8250000000000028,
+   "tail": " train time 66 s\n  eval u 32: 12.3688 bits/token, 3.3526 bits/byte, train time 69 s\n  eval u 34: 12.3620 bits/token, 3.3508 bits/byte, train time 73 s\n  eval u 36: 12.3583 bits/token, 3.3498 bits/byte, train time 77 s\n  eval u 38: 12.3567 bits/token, 3.3494 bits/byte, train time 81 s\n  eval u 40: 12.3564 bits/token, 3.3493 bits/byte, train time 85 s\n{\"status\": \"done\", \"final\": {\"update\": 40, \"kind\": \"scheduled\", \"tokens\": 5242880, \"flops\": 890604418498560, \"train_time_s\": 85.078, \"bits_per_token\": 12.356407, \"bits_per_byte\": 3.349282, \"eval_targets\": 65536}, \"train_time_s\": 85.07798510399743}\n",
+   "slowdown_vs_alone": 1.086575342465754
+  }
+ ],
+ "parallel_parent_reserved_gb": [
+  0.0546875,
+  0.0
+ ],
+ "seconds": 1509.9
+}

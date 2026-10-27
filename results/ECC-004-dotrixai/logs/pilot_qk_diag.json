@@ -1,0 +1,92 @@
+{
+ "utc": "2026-10-21T05:23:20Z",
+ "env": {
+  "python": "3.13.15",
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+  "code_sha256": "0ce1a009456c6e76a3c8291c2f7111887f73a5665c3869bb0677d7b0079007f4",
+  "kaggle": "Batch",
+  "gpu": "Tesla T4",
+  "capability": [
+   7,
+   5
+  ],
+  "cudnn": 91900,
+  "visible": null,
+  "nvidia_smi": "0, Tesla T4, 580.178.04, 15360 MiB\n1, Tesla T4, 580.178.04, 15360 MiB"
+ },
+ "code_sha256": "0ce1a009456c6e76a3c8291c2f7111887f73a5665c3869bb0677d7b0079007f4",
+ "step": [
+  {
+   "arm": "baseline",
+   "amp": "fp32",
+   "eager_loss": 9.082868576049805,
+   "noise_floor_eager_split2": {
+    "loss_diff": 4.76837158203125e-07,
+    "logits_max_abs_diff": null,
+    "grad_rel_diff": 4.6091744820841996e-07,
+    "grad_cos": 1.0
+   },
+   "compiled_vs_eager": {
+    "loss_diff": 0.0,
+    "logits_max_abs_diff": 3.2186508178710938e-06,
+    "grad_rel_diff": 6.126899165792565e-07,
+    "grad_cos": 0.9999998807907104
+   }
+  },
+  {
+   "arm": "baseline",
+   "amp": "fp16",
+   "eager_loss": 9.082876205444336,
+   "noise_floor_eager_split2": {
+    "loss_diff": 0.0,
+    "logits_max_abs_diff": null,
+    "grad_rel_diff": 0.018181953579187393,
+    "grad_cos": 0.9998347163200378
+   },
+   "compiled_vs_eager": {
+    "loss_diff": 1.9073486328125e-06,
+    "logits_max_abs_diff": 0.00244140625,
+    "grad_rel_diff": 0.021453162655234337,
+    "grad_cos": 0.999769926071167
+   }
+  },
+  {
+   "arm": "ngpt",
+   "amp": "fp32",
+   "eager_loss": 9.01278018951416,
+   "noise_floor_eager_split2": {
+    "loss_diff": 0.0,
+    "logits_max_abs_diff": null,
+    "grad_rel_diff": 4.559394994885224e-07,
+    "grad_cos": 1.0
+   },
+   "compiled_vs_eager": {
+    "loss_diff": 0.0,
+    "logits_max_abs_diff": 1.7881393432617188e-07,
+    "grad_rel_diff": 2.6550122811386245e-07,
+    "grad_cos": 1.0
+   }
+  },
+  {
+   "arm": "ngpt",
+   "amp": "fp16",
+   "eager_loss": 9.012779235839844,
+   "noise_floor_eager_split2": {
+    "loss_diff": 9.5367431640625e-07,
+    "logits_max_abs_diff": null,
+    "grad_rel_diff": 0.0031833017710596323,
+    "grad_cos": 0.9999948740005493
+   },
+   "compiled_vs_eager": {
+    "loss_diff": 9.5367431640625e-07,
+    "logits_max_abs_diff": 0.000244140625,
+    "grad_rel_diff": 0.019413888454437256,
+    "grad_cos": 0.9998115301132202
+   }
+  }
+ ],
+ "traj": [],
+ "seconds": 133.5
+}
