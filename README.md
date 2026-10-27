@@ -2,6 +2,8 @@
 
 An open project to find out what really makes the training of AI models efficient, tested honestly and in public.
 
+> **Status (2026-10-27):** DotrixAI, which maintains ECC, is focusing on internal research for now. The project stays open: proposals, checks and reviews are still welcome, but maintainer reviews may be slower. ECC-004 (nGPT on GPU) is paused with its plan final and reviewed; it will run when resources allow. ECC-003 continues.
+
 Many papers report that a new optimizer, architecture, schedule or data trick reaches the same quality with less compute. Some of these claims hold. Some shrink against a well tuned baseline or at a larger scale. Some measure FLOPs but not wall clock time. Practitioners rarely know which is which before they spend their own compute.
 
 ECC does three things:
