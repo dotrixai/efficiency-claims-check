@@ -50,7 +50,7 @@ What a 25M result cannot show: whether nGPT saves steps at 0.5B to 1B or beyond,
 
 ### Model (same shapes on both sides)
 
-**Main size, 25M:** d 384, 8 layers, 6 heads (head dim 64), SwiGLU MLP with hidden size 1536 (4d, as in the paper), RoPE, untied input and output embeddings, vocabulary 8,192. Parameters: baseline 25,179,904, nGPT 25,207,808. The difference is nGPT's scaling vectors (41,984) against the baseline's LayerNorm and QK-norm gains (14,080). FLOPs per token are the same on both sides: 169.9M at context 1024 and 283.1M at 4096 (forward and backward, analytic count, attention counted at full T x T).
+**Main size, 25M:** d 384, 8 layers, 6 heads (head dim 64), SwiGLU MLP with hidden size 1536 (4d, as in the paper), RoPE, untied input and output embeddings, vocabulary 8,192. Parameters: baseline 25,179,904, nGPT 25,207,808. The difference is nGPT's scaling vectors (41,984) against the baseline's LayerNorm and QK-norm gains (14,080). Counted FLOPs per token are the same on both sides: 169.9M at context 1024 and 283.1M at 4096 (forward and backward, analytic count of the matrix multiplications, attention counted at full T x T). The count leaves out elementwise work: normalizations, residual mixing, scaling vectors, softmax and, for nGPT only, renormalizing every matrix after each optimizer step. nGPT does more of this work than the baseline; its size is estimated under "What is measured".
 
 **Scale point, 89M (context 1024 only):** d 640, 12 layers, 10 heads (head dim 64), MLP hidden 2560, otherwise the same. About 89.1M parameters and 597.6M FLOPs per token at 1024 (3.5x the 25M model).
 
@@ -169,7 +169,8 @@ The data order of seed 11 was used in the calibration runs (first 200 updates), 
 
 ## What is measured
 
-- **R_steps** = training tokens nGPT needs to reach Q, divided by the baseline's. Tokens per update are equal, so this is the ratio of steps the paper reports. FLOPs per token are equal too, so **R_FLOP = R_steps**.
+- **R_steps** = training tokens nGPT needs to reach Q, divided by the baseline's. Tokens per update are equal, so this is the ratio of steps the paper reports. Counted FLOPs per token are equal too, so **R_FLOP ≈ R_steps**, and R_FLOP is reported as the ratio of counted FLOPs.
+- **What the FLOP count leaves out (ESTIMATED, analytic, 25M at 1024):** nGPT's elementwise work is about 0.47M FLOPs per token (eight normalizations of width 384 per layer, residual mixing and scaling vectors), against about 0.25M for the baseline (two LayerNorms, QK-norm and residual adds per layer). Renormalizing every matrix after each step adds under 0.001%. So the uncounted extra for nGPT is about 0.1-0.3% of training FLOPs, and the true FLOP ratio is expected within 0.5% of R_steps. Its real cost, which matters more on a GPU than its FLOPs, is in R_time. (Point raised by Jordan in review, 2026-10-26.)
 - **Primary estimator, as in the paper:** the final points of the nGPT runs at their different budgets, each with its own schedule, interpolated linearly in log tokens.
 - **Trend with size:** R at 89M divided by R at 25M, both at 5 tokens per parameter (seed 11, and the 25M seeds' range). Reported with its seed count; no pass rule.
 - **Secondary estimator, as in METHOD §1 and ECC-001:** the evaluation points of the full-budget nGPT run. Reported, not used for the verdict.
@@ -202,7 +203,7 @@ Per context, using the median over seeds of R (primary estimator) and R_time:
 
 A context with fewer than 3 finished seeds gets its verdict with the seed count, for example "PARTIAL (1 seed only)".
 
-The pass rule of a context applies to every stage at that context (25M at 20 and at 5 tokens per parameter, 89M at 5). Every verdict is stated with its scale, budget and the screen label, for example "PARTIAL at 25M, context 1024, 20 tokens per parameter (small-scale screen)"; the 89M stage always carries "(1 seed only)". It is a verdict on this setup, not on the claim at 0.5B to 1B.
+The pass rule of a context applies to every stage at that context (25M at 20 and at 5 tokens per parameter, 89M at 5). Every verdict is stated with its scale, budget and the screen label, and names the baseline, for example "PARTIAL at 25M, context 1024, 20 tokens per parameter, against a QK-norm GPT baseline (small-scale screen)"; the 89M stage always carries "(1 seed only)". It is a verdict on this setup, not on the claim at 0.5B to 1B, and not a one-to-one replication of the paper's baseline, which has no QK-norm.
 
 ## Validity checks
 
@@ -214,7 +215,7 @@ A run is invalid if any of these fail:
 
 ## Stop rules and budget
 
-- **Approved GPU budget:** 48 Kaggle GPU hours for tuning and final runs (owner, 2026-10-21), on DotrixAI's Kaggle account. The calibration and pilot hours above are outside it.
+- **Approved GPU budget:** 50 Kaggle GPU hours for tuning and final runs, on DotrixAI's Kaggle account (owner, 2026-10-21: 48 hours; raised to 50 on 2026-10-27 after review found that the planned stages below sum to 48.5). The calibration and pilot hours above are outside it.
 - **Order of work** (planned hours, PROJECTED):
   1. 25M tuning at 1024, with edge runs and the compile guard (about 3);
   2. the three 25M seeds at 1024, with the matching point (about 11);
@@ -223,7 +224,7 @@ A run is invalid if any of these fail:
   5. 89M tuning (about 5);
   6. 89M seed 11 (about 10.5);
   7. 25M seeds 22 and 33 at 4096 (about 11).
-  This order keeps at least one 4096 seed and the 89M point if the budget runs short.
+  Planned total about 48.5 hours, leaving about 1.5 hours of margin. This order keeps at least one 4096 seed and the 89M point if the budget runs short.
 - **If the budget runs out:** the seeds not yet run are reported as not run, never dropped silently. If no 4096 seed finishes, stage B is reported as not run; the same for the 89M point.
 - **Session limit:** a run still going 11 hours into its Kaggle session stops with an evaluation at that point. It is resumed from its checkpoint in a new session if the budget allows; otherwise that point is reported as a bound.
 - **Nothing else stops a run.** Quality is never used to stop a run.
