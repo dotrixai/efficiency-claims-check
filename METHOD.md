@@ -1,6 +1,6 @@
 # Method
 
-Standard S-1, draft v1.0 (see [`standards/`](standards/)). Governed by [`CHARTER.md`](CHARTER.md).
+Standard S-1, draft v1.1 (see [`standards/`](standards/)). Governed by [`CHARTER.md`](CHARTER.md).
 
 How a check is measured and reported. The rules exist because each one caught a real mistake, often our own.
 
@@ -63,6 +63,7 @@ A run is invalid if any of these fail:
 - A single seed is a single seed. Say so.
 - Publish the result whatever it says. "Did not hold at 5M parameters on CPU" is a useful result.
 - Do not generalize beyond the tested scale. A small scale check informs a claim; it rarely settles it.
+- Make the check reproducible as set out in [S-3](standards/S-3-reproducibility.md): logs and a `verify.py` anyone can rerun, a pinned way to run one seed again, and a `result.json`.
 
 ## 7. Verdicts
 
